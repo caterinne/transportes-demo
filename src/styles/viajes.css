@@ -1,0 +1,206 @@
+/* ============================================================
+    CONTENEDOR PRINCIPAL
+   ============================================================ */
+.viajes-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Títulos */
+.dashboard-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+/* ============================================================
+    FILTROS
+   ============================================================ */
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 14px;
+    background: #f8f9fc;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e3e6eb;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+/* Buscador + botón alineados a la derecha */
+.filtros-derecha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 260px;
+}
+
+
+.filtros-derecha input {
+    flex: 1;
+    background: var(--muted-surface);
+}
+
+.limpiarFiltros {
+    white-space: nowrap;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.limpiarFiltros:hover {
+    opacity: 0.85;
+}
+
+
+/* ============================================================
+    TABLA
+   ============================================================ */
+.table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border, #ddd);
+    background: var(--card-bg, #ffffff);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--table-head, #f1f1f1);
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+tbody td {
+    padding: 10px 12px;
+    border-top: 1px solid var(--border, #eee);
+    color: var(--text-primary);
+}
+
+.clickable-row {
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.clickable-row:hover {
+    background: var(--table-hover, #f6f9ff);
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* ============================================================
+    PAGINACIÓN
+   ============================================================ */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+.paginacion button {
+    padding: 2px 6px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.paginacion button:disabled {
+    background: #c3c4c6;
+    cursor: not-allowed;
+}
+
+.paginacion button:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-content {
+    position: relative;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: transparent;
+    border: none;
+    color: #dc2626;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.delete-icon:hover {
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.1);
+}
+
+
+/* ============================================================
+    MODO OSCURO (opcional si usas pref-colors)
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+    .filtros-container,
+    .table-container,
+    .modal-content {
+        background: #1e1e1e;
+    }
+
+    thead {
+        background: #292929;
+    }
+
+    .clickable-row:hover {
+        background: #2c2f40;
+    }
+
+    .filtro select,
+    .filtro input[type="date"],
+    .busqueda input {
+        background: #2e2e2e;
+        color: #ffffff;
+        border-color: #444;
+    }
+
+    .dashboard-title {
+        color: white;
+    }
+
+    tbody td {
+        color: white;
+    }
+}
+

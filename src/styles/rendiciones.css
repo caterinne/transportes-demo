@@ -1,0 +1,184 @@
+/* === Contenedor general === */
+.rendiciones-container {
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.rendicion-form {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* === Card por sección === */
+.form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.form-section:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* === Título de sección === */
+.form-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Iconos decorativos (si los agregás con lucide-react) */
+.form-section h3 svg {
+  color: var(--primary);
+}
+
+/* === Inputs dentro de cada sección === */
+.input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--muted-surface);
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-weak);
+}
+
+/* === Distribución de los inputs en grillas === */
+.viaje-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === Botón principal === */
+.guardar-btn {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.guardar-btn:hover {
+  background-color: var(--primary-weak);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* === Línea divisoria visual === */
+.section-divider {
+  height: 2px;
+  background: var(--primary-weak);
+  border: none;
+  border-radius: 2px;
+  margin: 1rem 0;
+}
+
+/* === Checkbox estilizado === */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: var(--text-inverse);
+  position: absolute;
+  top: 0;
+  left: 4px;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+/* === Resumen de gastos === */
+.resumen-gastos {
+  background: var(--muted-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resumen-gastos p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: .4rem; /* separa el icono del texto */
+}
+
+
+.resumen-gastos strong {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+
+
+.input-busqueda {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* se mantiene por si la tabla realmente lo necesita */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  min-width: 0; /* <--- evita scroll horizontal */
+}

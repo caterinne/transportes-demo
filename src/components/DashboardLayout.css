@@ -1,0 +1,154 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: var(--sidebar-bg);
+  color: var(--text-inverse);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1rem;
+  border-right: 1px solid var(--sidebar-border);
+}
+
+.sidebar-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: var(--text-inverse);
+  margin: .25rem 0 1rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.nav-link {
+  color: var(--text-inverse);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem .75rem;
+  border-radius: .6rem;
+  font-weight: 500;
+  opacity: .9;
+  transition: background .2s ease, transform .15s ease, opacity .2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--sidebar-hover);
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.logout-btn {
+  margin-top: 1rem;
+  width: 100%;
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: .6rem;
+  padding: .6rem .8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: filter .2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* opcional, centra icono + texto */
+  gap: .5rem; /* espacio entre ícono y texto */
+}
+
+.logout-btn:hover {
+  filter: brightness(0.95);
+}
+
+
+/* Main */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topbar {
+  background: var(--surface);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  height: 64px;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.getTitle {
+  margin-top: 15px;
+}
+
+.content-wrapper {
+  flex: 1;
+  overflow: auto;
+  padding: 1.25rem 1.25rem 1.75rem;
+  background: var(--bg);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.profile-link:hover {
+  background: var(--primary-dark);
+}
+
+/* FIX Recharts — evita que los contenedores flex colapsen */
+.main-content,
+.content-wrapper,
+.reportes-layout,
+.reportes-panel {
+  min-height: 0 !important;
+  min-width: 0 !important;
+}
+
+.badge {
+  background: #f59e0b;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}

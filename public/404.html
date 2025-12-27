@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirect</title>
+    <script>
+      const path = window.location.pathname
+        .replace("/transportes-demo", "");
+      window.location.replace(
+        "/transportes-demo/#" + path
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

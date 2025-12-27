@@ -1,0 +1,123 @@
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+.reportes-container {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; translate: 0 5px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* ===========================
+   FILTROS SUPERIORES
+=========================== */
+.reportes-filtros {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ===========================
+   KPIS
+=========================== */
+.reportes-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.kpi-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--primary);
+  transition: 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+}
+
+.kpi-icon {
+  background: rgba(66, 133, 244, 0.12);
+  display: inline-flex;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.kpi-label {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.kpi-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 5px;
+  color: #222;
+}
+
+.kpi-extra {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #888;
+}
+
+.kpi-destacado {
+  border-left-color: #e91e63 !important;
+}
+
+/* ===========================
+   LAYOUT DE REPORTES (Gráficos + Tablas)
+=========================== */
+.reportes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  min-width: 0;
+  min-height: 0;
+}
+
+@media (max-width: 1100px) {
+  .reportes-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Panel individual */
+.reportes-panel {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.reportes-panel h2 {
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.reportes-panel h3 {
+  margin-top: 24px;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+/* ===========================
+   NO DATOS / LOADING
+=========================== */
+.no-data {
+  padding: 10px 0;
+  color: #777;
+  font-style: italic;
+}
