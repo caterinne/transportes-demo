@@ -16,14 +16,11 @@ import { demoDrivers } from "../demo/drivers";
 import { demoTrips } from "../demo/trips";
 import { demoLicenses } from "../demo/licenses";
 
-
-import { useAuth } from "../context/AuthContext";
 import { formatoCLP, formatoNumero } from "../utils/formatos.js";
 import StatusPill from "../components/StatusPill";
 
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-
 
 export default function Conductores() {
   const [conductores, setConductores] = useState([]);
@@ -53,7 +50,6 @@ export default function Conductores() {
   const [cargando, setCargando] = useState(false);
 
   const companyId = "transportesOliva";
-  const { profile } = useAuth();
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: "",
@@ -271,7 +267,6 @@ const filasLicencias =
   return (
     <div className="conductores-container">
       {/* FORMULARIO */}
-    {["admin", "developer"].includes(profile?.role) && (
       <form onSubmit={handleSubmit} className="conductor-form">
         <div className="form-row">
           <TextField fullWidth label="Nombre y Apellido" name="nombre" size="small" value={form.nombre} onChange={handleChange} />
@@ -282,7 +277,6 @@ const filasLicencias =
           </button>
         </div>
       </form>
-    )}
       <h1 className="dashboard-title">Conductores</h1>
 
       {/* BUSCADOR */}
@@ -413,7 +407,6 @@ const filasLicencias =
                     }}
                 />
             </div>
-            {["admin", "developer"].includes(profile?.role) && (
             <button
                 className="patente-button danger"
                 onClick={() => setModalLicenciaAbierto(true)}
@@ -421,8 +414,6 @@ const filasLicencias =
             >
                 Agregar Licencia
             </button>
-            )}
-
             <h2>Viajes</h2>
             <div style={{ height: 300, width: "100%" }} className="datagrid-wrapper">
               <DataGrid
